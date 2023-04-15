@@ -17,12 +17,6 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 
@@ -33,16 +27,14 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">E-commerce Api</h3>
 
   <p align="center">
-    project_description
+    This is an e-commerce api based on the outline provided in gdsc task
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/github_username/repo_name"><strong>Deployed Backend Server Here »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
-    ·
     <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
     ·
     <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
@@ -82,25 +74,19 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description`
-
+This project is an API that is divided into two levels - user and admin. The user level APIs provide authentication, profile viewing and updating, cart and wishlist management, search, and filtering based on price. The admin level APIs provide authentication, creation, update and deletion of products, and user account suspension.
+The dbms used here is mongodb via mongoose module.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## Testing
 
+This project can be tested by using postman
 
 ### Built With
 
-* [Next.js](https://nextjs.org/)
-* [React.js](https://reactjs.org/)
-* [Vue.js](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-
+* [Node.js](https://nodejs.org/)
+ 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -121,18 +107,17 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/github_username/repo_name.git
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
+3. Enter your mongodb uri details in `.env`
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   URI = 'ENTER YOUR URI';
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -142,9 +127,46 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+### USER level Api  : 
+ 1. Authentication
+ -  signin - ``` /auth/signin ```
+ -  signup - ``` /auth/signup ```
+ 2. Profile view
+ -  get - ``` user/get ```
+ 3. Profile update
+ -  update - ``` user/update ```
+ 4. Cart
+ - - Note - it may be hard to test this without a reactjs or any other framework frontend as the data to be provided is an object or an array
+ -  get - ``` /user/cart/get ```
+ -  add - ``` /user/cart/add ```
+ -  remove - ``` /user/cart/cancel ```
+ 5. Wishlist
+ - - Note - it may be hard to test this without a reactjs or any other framework frontend as the data to be provided is an object or an array
+ -  get - ``` /user/wishlist/get ```
+ -  add - ``` /user/wishlist/add ```
+ -  remove - ``` /user/wishlist/cancel ```
+ 6. Orders
+ - - Note - it may be hard to test this without a reactjs or any other framework frontend as the data to be provided is an object or an array
+ -  get - ``` /user/orders/get ```
+ -  add - ``` /user/orders/add ```
+ -  remove - ``` /user/orders/cancel ```
+ 8. Search without filter
+ -  get - ``` /search/item1 ```
+ -  get2 - ``` /search/q1/:value ``` 
+ 9. Filter(By-price) along with other options
+ -  get - ``` /search/qf ```
+  
+### ADMIN level Api’s : 
+1. Authentication
+ -  signin - ``` /admin/signin ```
+ -  signup - ``` /admin/signup ```
+2. Create , Update and Delete Product
+ - -  Note - it may be hard to test this without a reactjs or any other framework frontend as the details of the product are not fixed or some maybe missing
+ -  create - ``` /admin/products/create ```
+ -  update - ``` /admin/products/update ```
+ -  delete - ``` /admin/products/delete ```
+3. User account Suspend
+ - suspend ``` /user/admin/suspend ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -153,10 +175,21 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- Api’s are created in two separate level (a. user side , b. admin side)
+1. In USER level Api there is  : 
+ - Authentication
+ - Profile view
+ - Profile update
+ - Add to cart
+ - Add to wishlist
+ - Search
+ - Filter(By-price) along with other options
+
+2.   In ADMIN level Api’s : 
+- Authentication
+- Create , Update and Delete Product
+- User account Suspend
+
 
 See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
 
@@ -186,28 +219,6 @@ Don't forget to give the project a star! Thanks again!
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* []()
-* []()
-* []()
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
