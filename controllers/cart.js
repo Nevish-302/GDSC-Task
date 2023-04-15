@@ -8,7 +8,7 @@ const getItems = async (req, res) => {
     const userId = isAuth(req)
     const user_orders = await cartDetails.find({userid : userId})
     if(!user_orders.cart)
-    res.send(`There are no orders for this user`)
+    res.send(`There are no items in the cart for this user`)
     else
     res.json({orders : user_orders.cart})}
     catch (err) {
