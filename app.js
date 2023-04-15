@@ -3,16 +3,21 @@ const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
 const bodyParser = require('body-parser')
+require('dotenv').config()
 
 const app = express()
 
 app.use(bodyParser.urlencoded({extended : true}))
 app.use(cookieParser())
+
+//The cors command will be updated according to the requirements
+//like app.use(cors({credentials : true, origin: 'https://goresume-ten.vercel.app', }))
 app.use(cors())
 
-//const uri = `mongodb+srv://Just_user:Just_user@cluster0.iaihsai.mongodb.net/?retryWrites=true&w=majority`;
-const uri = 'mongodb://127.0.0.1:27017/test'
-mongoose.connect(uri, {useNewUrlParser : true})
+//Use this for testing purposes
+//const uri = 'mongodb://127.0.0.1:27017/test'
+//mongoose.connect(uri, {useNewUrlParser : true})
+mongoose.connect(process.env.URI, {useNewUrlParser : true})
 const connection = mongoose.connection
 connection.once('open', ()=>
 {
