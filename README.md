@@ -129,44 +129,44 @@ This is an example of how to list things you need to use the software and how to
 
 ### USER level Api  : 
  1. Authentication
- -  signin - ``` /auth/signin ```
- -  signup - ``` /auth/signup ```
+ -  POST signin - ``` /auth/signin ```
+ -  POST signup - ``` /auth/signup ```
  2. Profile view
  -  get - ``` user/get ```
  3. Profile update
  -  update - ``` user/update ```
  4. Cart
  - - Note - it may be hard to test this without a reactjs or any other framework frontend as the data to be provided is an object or an array
- -  get - ``` /user/cart/get ```
- -  add - ``` /user/cart/add ```
- -  remove - ``` /user/cart/cancel ```
+ -  POST get - ``` /user/cart/get ```
+ -  POST add - ``` /user/cart/add ```
+ -  POST remove - ``` /user/cart/cancel ```
  5. Wishlist
  - - Note - it may be hard to test this without a reactjs or any other framework frontend as the data to be provided is an object or an array
- -  get - ``` /user/wishlist/get ```
- -  add - ``` /user/wishlist/add ```
- -  remove - ``` /user/wishlist/cancel ```
+ -  POST get - ``` /user/wishlist/get ```
+ -  POST add - ``` /user/wishlist/add ```
+ -  POST remove - ``` /user/wishlist/cancel ```
  6. Orders
  - - Note - it may be hard to test this without a reactjs or any other framework frontend as the data to be provided is an object or an array
- -  get - ``` /user/orders/get ```
- -  add - ``` /user/orders/add ```
- -  remove - ``` /user/orders/cancel ```
+ -  POST get - ``` /user/orders/get ```
+ -  POST add - ``` /user/orders/add ```
+ -  POST remove - ``` /user/orders/cancel ```
  8. Search without filter
- -  get - ``` /search/item1 ```
- -  get2 - ``` /search/q1/:value ``` 
+ -  GET get - ``` /search/item1 ```
+ -  GET get2 - ``` /search/q1/:value ``` 
  9. Filter(By-price) along with other options
- -  get - ``` /search/qf ```
+ -  GET get - ``` /search/qf ```
   
 ### ADMIN level Api’s : 
 1. Authentication
- -  signin - ``` /admin/signin ```
- -  signup - ``` /admin/signup ```
+ -  POST signin - ``` /admin/signin ```
+ -  POST signup - ``` /admin/signup ```
 2. Create , Update and Delete Product
  - -  Note - it may be hard to test this without a reactjs or any other framework frontend as the details of the product are not fixed or some maybe missing
- -  create - ``` /admin/products/create ```
- -  update - ``` /admin/products/update ```
- -  delete - ``` /admin/products/delete ```
+ -  POST create - ``` /admin/products/create ```
+ -  POST update - ``` /admin/products/update ```
+ -  POST delete - ``` /admin/products/delete ```
 3. User account Suspend
- - suspend ``` /user/admin/suspend ```
+ -  POST suspend ``` /user/admin/suspend ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
