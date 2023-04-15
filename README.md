@@ -130,43 +130,63 @@ This is an example of how to list things you need to use the software and how to
 ### USER level Api  : 
  1. Authentication
  -  POST signin - ``` /auth/signin ```
+ - - VARIABLES REQUIRED username, password
  -  POST signup - ``` /auth/signup ```
+ - - VARIABLES REQUIRED name, mobile, email, password
  2. Profile view
  -  get - ``` user/get ```
  3. Profile update
  -  update - ``` user/update ```
+ - - VARIABLES REQUIRED name, mobile, email, password
  4. Cart
  - - Note - it may be hard to test this without a reactjs or any other framework frontend as the data to be provided is an object or an array
  -  POST get - ``` /user/cart/get ```
  -  POST add - ``` /user/cart/add ```
+ - - VARIABLES REQUIRED item_s - an array of objects containing 1. id as _id of required product with 2. number as number of products
  -  POST remove - ``` /user/cart/cancel ```
+ - - VARIABLES REQUIRED item_s - an array of objects containing 1. id as _id of required product with 2. number as number of products
  5. Wishlist
  - - Note - it may be hard to test this without a reactjs or any other framework frontend as the data to be provided is an object or an array
  -  POST get - ``` /user/wishlist/get ```
  -  POST add - ``` /user/wishlist/add ```
+ - - VARIABLES REQUIRED item_s - an array of objects containing 1. id as _id of required product with 2. number as number of products
  -  POST remove - ``` /user/wishlist/cancel ```
+ - - VARIABLES REQUIRED item_s - an array of objects containing 1. id as _id of required product with 2. number as number of products
  6. Orders
  - - Note - it may be hard to test this without a reactjs or any other framework frontend as the data to be provided is an object or an array
  -  POST get - ``` /user/orders/get ```
  -  POST add - ``` /user/orders/add ```
+ - - VARIABLES REQUIRED item_s - an array of objects containing 1. id as _id of required product with 2. number as number of products
  -  POST remove - ``` /user/orders/cancel ```
+ - - VARIABLES REQUIRED item_s - an array of objects containing 1. id as _id of required product with 2. number as number of products
  8. Search without filter
  -  GET get - ``` /search/item1 ```
+ - - VARIABLES REQUIRED name 
  -  GET get2 - ``` /search/q1/:value ``` 
+ - - VARIABLES REQUIRED value in url
  9. Filter(By-price) along with other options
  -  GET get - ``` /search/qf ```
+  - - VARIABLES REQUIRED name 
   
 ### ADMIN level Api’s : 
 1. Authentication
  -  POST signin - ``` /admin/signin ```
+ - - VARIABLES REQUIRED username, password
  -  POST signup - ``` /admin/signup ```
+ - - VARIABLES REQUIRED name, mobile, email, password
+ 
 2. Create , Update and Delete Product
  - -  Note - it may be hard to test this without a reactjs or any other framework frontend as the details of the product are not fixed or some maybe missing
  -  POST create - ``` /admin/products/create ```
+ - - VARIABLES REQUIRED product - an object having required variables as explained in ./models/product1
  -  POST update - ``` /admin/products/update ```
+ - - VARIABLES REQUIRED itemId- id of the required product, product - an object having required variables as explained in ./models/product1
  -  POST delete - ``` /admin/products/delete ```
+ - - VARIABLES REQUIRED itemId- id of the required product
+ 
 3. User account Suspend
  -  POST suspend ``` /user/admin/suspend ```
+ - - VARIABLES REQUIRED userId- id of the required account in question
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
